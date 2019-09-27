@@ -83,12 +83,12 @@ plt.show()
 #rgb 3 boyutlu m n lik resmi m/2 n/2 geri döndüren fonksiyon yazınız.
 
 def myFunction4(im500):
-    k,l,p=im500.shape
-    m=int(k/2)
-    n=int(l/2)
-    im600 = np.zeros((m,n,3), dtype = int)
-    for m in range(m):
-        for n in range(n):
+    m,n,p=im500.shape
+    k=int(m/2)
+    l=int(n/2)
+    im600 = np.zeros((k,l,3), dtype = int)
+    for m in range(k):
+        for n in range(l):
          #   s0 = (im500[m*2,n*2,0] /3  + im500[m*2,n*2,1] / 3 + im500[m*2,n*2,2] / 3)
             #verdiği hata pixel degerlerinin türünden,(int) tasmasından dolayı
             
@@ -105,6 +105,7 @@ def myFunction4(im500):
             im600[m,n,2] = im500[m * 2,n * 2,2]
 
     return im600
+
 
 plt.imshow(myFunction4(im1))
 plt.show()
